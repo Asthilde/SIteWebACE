@@ -1,0 +1,20 @@
+<section class="presentation border-top border-bottom border-warning">
+    <div class="container-fluid my-2">
+      <div class="row"><h1>{{ sectionPresentee.titre }}</h1></div>
+      <div class="row">
+        <div class="col-4">
+        <img class="mx-auto d-block" alt="image" [src]="sectionPresentee.image">
+        </div>
+        <div class="col-8">
+          <p> {{sectionPresentee.texte }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+        </div>
+        <div class="col-4">
+        <button class="btn btn-dark mb-2" (click)="afficherPage(sectionPresentee.lienPage)">En savoir plus</button>
+        </div>
+      </div>
+    </div>
+  </section>

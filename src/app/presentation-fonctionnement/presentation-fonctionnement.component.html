@@ -1,0 +1,15 @@
+<section class="presentation">
+    <div class="container-fluid my-2">
+        <div class="row"><h2>Comment je fonctionne</h2></div>
+        <app-timeline></app-timeline>
+        <div class="mt-2 row"><h3 class="ml-2">Mes outils</h3></div>
+        <div class="row">
+            <div class="col-6">
+                <app-presentation-outils [outilPresente]="listeOutilsPresentes[0]"></app-presentation-outils>
+            </div>
+            <div class="col-6">
+                <app-presentation-outils [outilPresente]="listeOutilsPresentes[1]"></app-presentation-outils>
+            </div>
+        </div>
+    </div>
+</section>

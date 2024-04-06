@@ -1,0 +1,44 @@
+<section class="presentation">
+    <div class="container-fluid my-2">
+        <h1>Contact</h1>
+        <div class="container-fluid ml-3">
+        <form>
+            <div class="form-row mb-2">
+            <div class="form-group col-md-6">
+                <label for="inputFirstName">Prénom</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Prénom" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLastName">Nom</label>
+                <input type="password" class="form-control" id="inputLastName" placeholder="Nom" required>
+            </div>
+            </div>
+            <!--Demander à Lucas si l'un des deux champs est obligatoire-->
+            <div class="form-row mb-2">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Adresse mail</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="cycliste@gmail.com">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPhone">Téléphone</label>
+                    <input type="text" class="form-control" id="inputPhone" placeholder="Téléphone">
+                </div>
+            </div>
+            <!-- Est ce réellement nécessaire ou est ce que l'encadré texte suffit ? + comprendre pourquoi pas la flèche vers le bas ...-->
+            <div class="form-group col-md-6 mb-2">
+                <label for="inputTypeDemande">Votre demande</label>
+                <select id="inputTypeDemande" class="form-control">
+                    <option selected>Demander un renseignement</option>
+                    <option>Obtenir un rendez-vous téléphonique</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <div class="form-group col-md-8 mb-3">
+                <label for="inputDemande">Votre message</label>
+                <textarea class="form-control" id="inputDemande"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Envoyer ma demande</button>
+        </form>
+    </div>
+    </div>
+</section>

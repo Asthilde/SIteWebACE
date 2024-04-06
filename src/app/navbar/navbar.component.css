@@ -1,0 +1,28 @@
+a {
+    margin: 0 5px;
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: lightgray 0 0 5px;
+    }
+  }
+  
+ a button {
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 5px 5px;
+    border: none;
+    outline: none;
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: lightgray 0 0 5px;
+    }
+  }
+
+  .active {
+    text-decoration: underline;
+  }

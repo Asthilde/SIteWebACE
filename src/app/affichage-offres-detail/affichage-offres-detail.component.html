@@ -1,0 +1,12 @@
+<section class="presentation border-top border-warning">
+    <div class="container-fluid my-2">
+        <h1>Les offres</h1>
+        <p>Petite explication des offres</p>
+        <div class="d-flex flex-row flex-wrap justify-content-around">
+            <div class="p-3" style="min-width: 400px; width: 29%"><app-offre-detail [offrePresentee]="listeOffrePresentee[0]"></app-offre-detail></div>
+            <div class="p-3" style="min-width: 400px; width: 29%"><app-offre-detail [offrePresentee]="listeOffrePresentee[1]"></app-offre-detail></div>
+            <div class="p-3" style="min-width: 400px; width: 29%"><app-offre-detail [offrePresentee]="listeOffrePresentee[2]"></app-offre-detail></div>
+            <div style="max-width: 1000px"><app-offre-detail [offrePresentee]="offreSpeciale"></app-offre-detail></div>
+        </div>
+    </div>
+  </section>

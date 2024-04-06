@@ -1,0 +1,10 @@
+<section class="presentation border-top border-warning">
+    <div class="container-fluid my-2">
+        <h1>{{ experiencePresentee.titre }}</h1>
+        <p>{{ experiencePresentee.presentation }}</p>
+        <h2>{{ experiencePresentee.titre_liste }}</h2>
+        <ul class="pl-2">
+            <li *ngFor="let elt of experiencePresentee.faits">{{ elt }}</li>
+        </ul>
+    </div>
+</section>
