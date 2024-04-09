@@ -2,42 +2,50 @@
     <div class="container-fluid my-2">
         <h1>Contact</h1>
         <div class="container-fluid ml-3">
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-row mb-2">
-            <div class="form-group col-md-6">
-                <label for="inputFirstName">Prénom</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Prénom" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputLastName">Nom</label>
-                <input type="password" class="form-control" id="inputLastName" placeholder="Nom" required>
-            </div>
+                <div class="form-group col-md-6">
+                    <label for="inputFirstName">Prénom</label>
+                    <input type="text" class="form-control" formControlName="prenom" id="inputFirstName" placeholder="Prénom" required/>
+                    <div *ngIf="prenom?.errors?.['required'] && prenom?.touched" class="alert alert-warning">Ecrivez votre prénom</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputLastName">Nom</label>
+                    <input type="text" class="form-control" formControlName="nom" id="inputLastName" placeholder="Nom" required/>
+                    <div *ngIf="nom?.errors?.['required'] && nom?.touched" class="alert alert-warning">Ecrivez votre nom</div>
+                </div>
             </div>
             <!--Demander à Lucas si l'un des deux champs est obligatoire-->
             <div class="form-row mb-2">
                 <div class="form-group col-md-6">
                     <label for="inputEmail">Adresse mail</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="cycliste@gmail.com">
+                    <input type="email" class="form-control" formControlName="email" id="inputEmail" placeholder="cycliste@gmail.com" required/>
+                    <div *ngIf="email?.errors?.['required'] && email?.touched" class="alert alert-warning">Ecrivez votre email</div>
+                    <div *ngIf="email?.errors?.['email'] && email?.touched" class="alert alert-warning">L'email est invalide</div>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPhone">Téléphone</label>
-                    <input type="text" class="form-control" id="inputPhone" placeholder="Téléphone">
+                    <input type="text" class="form-control" formControlName="telephone" id="inputPhone" placeholder="Téléphone"/>
+                    <div *ngIf="telephone?.errors?.['minlength'] && telephone?.touched" class="alert alert-warning">Le numéro de téléphone doit contenir au minimum 9 chiffres</div>
+                    <div *ngIf="telephone?.errors?.['maxlength'] && telephone?.touched" class="alert alert-warning">Le numéro de téléphone doit contenir au maximum 13 chiffres</div>
                 </div>
             </div>
             <!-- Est ce réellement nécessaire ou est ce que l'encadré texte suffit ? + comprendre pourquoi pas la flèche vers le bas ...-->
             <div class="form-group col-md-6 mb-2">
                 <label for="inputTypeDemande">Votre demande</label>
-                <select id="inputTypeDemande" class="form-control">
-                    <option selected>Demander un renseignement</option>
-                    <option>Obtenir un rendez-vous téléphonique</option>
-                    <option>Autre</option>
+                <select id="inputTypeDemande" class="form-select" formControlName="demande" required>
+                    <option value="renseignement" selected>Demander un renseignement</option>
+                    <option value="RDV_telephonique">Obtenir un rendez-vous téléphonique</option>
+                    <option value="autre">Autre</option>
                 </select>
+                <div *ngIf="demande?.errors?.['required'] && demande?.touched" class="alert alert-warning">Sélectionnez le type de votre demande</div>
             </div>
             <div class="form-group col-md-8 mb-3">
                 <label for="inputDemande">Votre message</label>
-                <textarea class="form-control" id="inputDemande"></textarea>
+                <textarea class="form-control" id="inputDemande" formControlName="message" required></textarea>
+                <div *ngIf="message?.errors?.['required'] && message?.touched" class="alert alert-warning">Ecrivez votre message</div>
             </div>
-            <button type="submit" class="btn btn-dark">Envoyer ma demande</button>
+            <button type="submit" class="btn btn-dark">Envoyer ma demande</button> <!--[disabled]="form.invalid"-->
         </form>
     </div>
     </div>

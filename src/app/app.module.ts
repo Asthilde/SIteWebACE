@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,7 @@ import { DiplomesComponent } from './diplomes/diplomes.component';
 import { ExperienceProComponent } from './experience-pro/experience-pro.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
+import { EmailService } from './email.service';
 
 @NgModule({
   declarations: [
@@ -60,10 +63,13 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     BrowserModule,
     AppRoutingModule, 
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    EmailService
   ],
   bootstrap: [AppComponent]
 })

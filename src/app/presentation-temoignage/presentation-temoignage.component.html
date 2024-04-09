@@ -1,35 +1,45 @@
 <!--Demander à Lucas la version du carousel qu'il prefere entre 1 et 2 -->
-<ngb-carousel>
+<ngb-carousel class="m-2">
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img class="d-block w-100" src="../assets/photo_exemple.jpg" alt="Random first slide" />
+      <img class="d-block w-100" src="../assets/fond_ecran.jpg" alt="Random first slide" />
     </div>
     <div class="carousel-caption">
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img class="d-block w-100" src="../assets/photo_exemple2.jpg" alt="Random second slide" />
-    </div>
-    <div class="carousel-caption">
-      <div class="row">
-        <img class="col-4 w-50" src="../assets/photo_exemple2.jpg" alt="Random second slide" />
-        <div class="col-4">
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="card m-2 border-none">
+        <img src="../assets/photo_exemple.jpg" class="card-img-top" alt="Première photo"/>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
-      </div>    
+      </div>
     </div>
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img class="d-block w-100" src="../assets/photo_exemple3.jpg" alt="Random third slide" />
+      <img class="d-block w-100" src="../assets/fond_ecran.jpg" alt="Random second slide" />
     </div>
     <div class="carousel-caption">
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <div class="card m-2 border-none">
+        <img src="../assets/photo_exemple2.jpg" class="card-img-top" alt="Deuxième photo"/>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>  
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class="d-block w-100" src="../assets/fond_ecran.jpg" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <div class="card m-2 border-none">
+        <img src="../assets/photo_exemple3.jpg" class="card-img-top" alt="Première photo"/>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
     </div>
   </ng-template>
 </ngb-carousel>

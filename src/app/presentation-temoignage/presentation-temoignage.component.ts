@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './presentation-temoignage.component.css'
 })
 export class PresentationTemoignageComponent {
-
+  constructor(config: NgbCarouselConfig){
+    config.interval = 6000;
+  }
 }
