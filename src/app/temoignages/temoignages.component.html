@@ -2,7 +2,16 @@
     <div class="container-fluid my-2">
       <div class="row mb-2"><h1>Témoignages</h1></div>
       <div class="row mb-2">
-        <app-presentation-temoignage></app-presentation-temoignage>
+        <div class="card-group">
+          <div *ngFor="let avis of listeAvis; index as idx" class="card">
+            <img [src]="listeAvis[idx].image" class="card-img-top" alt="image_personne">
+            <div class="card-body">
+              <h5 class="card-title">{{ listeAvis[idx].auteur }}, {{ listeAvis[idx].age }} ans</h5>
+              <p class="card-text"><i>{{ listeAvis[idx].pratique }}</i> <br> {{ listeAvis[idx].texte }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- <app-presentation-temoignage></app-presentation-temoignage> -->
       </div>
     </div>
   </section>

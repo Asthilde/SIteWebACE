@@ -1,14 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { OffrePresentation } from '../offre-presentation';
+import { DonneesService } from '../donnees.service';
 
 @Component({
   selector: 'app-affichage-offres-detail',
   templateUrl: './affichage-offres-detail.component.html',
   styleUrl: './affichage-offres-detail.component.css'
 })
-export class AffichageOffresDetailComponent {
-  listeOffrePresentee: OffrePresentation[] = [
-    {
+export class AffichageOffresDetailComponent implements OnInit{
+
+  // donneesService: DonneesService = inject(DonneesService);
+  listeOffrePresentee: OffrePresentation[] = [];
+  offreSpeciale!: OffrePresentation;
+
+  constructor(private donneesService: DonneesService){}
+
+  ngOnInit(): void {
+      this.listeOffrePresentee = this.donneesService.getOffres();
+      this.offreSpeciale = this.donneesService.getOffreSpeciale();
+  }
+    /*{
       titre: 'Offre Découverte',
       public: "Sportif débutant dans la pratique de sports d'endurance ou découvrant le coaching",
       resume: "Cette offre est un premier pas pour découvrir les effets du coaching avant de se lancer dans des objectifs plus élevés !",
@@ -29,12 +40,6 @@ export class AffichageOffresDetailComponent {
       details: "L'offre inclut l'envoi d'un questionnaire personnel, une rencontre pour définir vos objectifs et moyens pour les atteindre, un plan d'entraînement communiqué chaque semaine via la plateforme d'entraînement Nolio, un suivi par mail/WhatsApp à volonté, un contact téléphonique régulier selon les besoins, une analyse quotidienne des données d'entraînement qui peut entraîner des modifications du plan d'entraînement en fonction des ressentis et de votre emploi du temps et un suivi en présentiel lors de vos principaux objectifs (à définir).",
       tarifs: [119, 350, 640, 1299]
     }
-  ];
+  ];*/
 
-  offreSpeciale: OffrePresentation = {
-    titre: "Offre spéciale",
-    resume:  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada. Non enim praesent elementum facilisis leo vel fringilla est. Cursus metus aliquam eleifend mi in nulla posuere sollicitudin.",
-    tarifs: [],
-  };
 }

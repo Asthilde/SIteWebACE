@@ -11,8 +11,8 @@ export class PresentationComponent {
   @Input() sectionPresentee! : SectionPresentation;
   constructor(private router: Router){}  
 
-  afficherPage(page: string){
+  afficherPage(page: string | undefined){
+    if(page != undefined)
       this.router.navigateByUrl(page);
-    
   }
 }

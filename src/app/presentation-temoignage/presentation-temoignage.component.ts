@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { AvisClient } from '../avis-client';
+import { DonneesService } from '../donnees.service';
 
 
 @Component({
@@ -7,8 +9,14 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './presentation-temoignage.component.html',
   styleUrl: './presentation-temoignage.component.css'
 })
-export class PresentationTemoignageComponent {
-  constructor(config: NgbCarouselConfig){
+export class PresentationTemoignageComponent implements OnInit {
+  listeAvis: AvisClient[] = [];
+
+  constructor(config: NgbCarouselConfig, private donneesService: DonneesService){
     config.interval = 6000;
+  }
+
+  ngOnInit(): void {
+      this.listeAvis = this.donneesService.getTemoignages();
   }
 }

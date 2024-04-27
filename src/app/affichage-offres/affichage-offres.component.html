@@ -1,11 +1,29 @@
 <section class="presentation">
     <div class="container-fluid my-2">
         <h1>Les offres</h1>
-        <div class="d-flex flex-row flex-wrap justify-content-around">
+        <div class="card-group mb-2">
+            <!-- <div  class="col-sm-6 my-3"> -->
+              <div *ngFor="let offre of listeOffrePresentee; index as idx" class="card text-center border-dark">
+                <div class="card-body">
+                  <h2 class="card-title">{{ listeOffrePresentee[idx].titre }}</h2>
+                  <p class="card-text">{{ listeOffrePresentee[idx].resume }}</p>
+                  <button class="btn btn-dark mt-2 mb-3 mx-auto" (click)="afficherOffres()">En savoir plus</button>
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+          <div class="card text-center border-dark my-2">
+                <div class="card-body">
+                  <h2 class="card-title">{{ offreSpeciale.titre }}</h2>
+                  <p class="card-text">{{ offreSpeciale.resume }}</p>
+                  <button class="btn btn-dark mt-2 mb-3 mx-auto" (click)="afficherOffres()">En savoir plus</button>
+                </div>
+              </div>
+        <!-- <div class="d-flex flex-row flex-wrap justify-content-around">
             <div class="p-3" style="min-width: 400px; width: 29%"><app-offre-accueil [offrePresentee]="listeOffrePresentee[0]"></app-offre-accueil></div>
             <div class="p-3" style="min-width: 400px; width: 29%"><app-offre-accueil [offrePresentee]="listeOffrePresentee[1]"></app-offre-accueil></div>
             <div class="p-3" style="min-width: 400px; width: 29%"><app-offre-accueil [offrePresentee]="listeOffrePresentee[2]"></app-offre-accueil></div>
             <div style="max-width: 1000px"><app-offre-accueil [offrePresentee]="offreSpeciale"></app-offre-accueil></div>
-        </div>
+        </div> -->
     </div>
 </section>

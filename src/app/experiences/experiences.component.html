@@ -1,7 +1,12 @@
 <section class="presentation border-top border-warning">
     <div class="container-fluid my-2">
         <h1>{{ experiencePresentee.titre }}</h1>
-        <p>{{ experiencePresentee.presentation }}</p>
+        <img *ngIf="experiencePresentee.image" class="img-fluid w-75 mx-auto" alt="image" [src]="experiencePresentee.image">
+        <ul class="pl-2">
+            <li *ngFor="let elt of experiencePresentee.presentation; index as i">{{ elt }}
+            <ul *ngIf="isValidIndex(i) && experiencePresentee.presentation_details"><li *ngFor="let action of experiencePresentee.presentation_details[i]">{{ action }}</li>
+            </ul></li>
+        </ul>
         <h2>{{ experiencePresentee.titre_liste }}</h2>
         <ul class="pl-2">
             <li *ngFor="let elt of experiencePresentee.faits">{{ elt }}</li>
